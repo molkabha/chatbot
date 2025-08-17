@@ -1,0 +1,148 @@
+/* عام */
+body {
+  font-family: Arial, sans-serif;
+  background: #ece5dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* حاوية الشات */
+.chat-container {
+  width: 100%;
+  max-width: 450px;
+  height: 90vh;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* هيدر الشات */
+.chat-header {
+  background: #075e54;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* صندوق الرسائل */
+.chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #ece5dd;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* الرسائل */
+.message {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 75%;
+  word-wrap: break-word;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.3s forwards;
+}
+
+/* رسائل المستخدم */
+.user {
+  background: #dcf8c6;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+/* رسائل البوت */
+.bot {
+  background: #fff;
+  align-self: flex-start;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 5px;
+}
+
+/* انيميشن الرسائل */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* إدخال الرسائل */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: #f0f0f0;
+  border-top: 1px solid #ccc;
+  gap: 8px;
+}
+
+.chat-input textarea {
+  flex: 1;
+  min-height: 45px;
+  max-height: 120px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  resize: none;
+  overflow-y: auto;
+  transition: all 0.2s;
+}
+
+.chat-input textarea:focus {
+  box-shadow: 0 0 5px #075e54;
+}
+
+.chat-input button {
+  flex: 0 0 45px;
+  height: 45px;
+  background: #075e54;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.chat-input button:hover {
+  background: #064c45;
+}
+
+/* متجاوب */
+@media screen and (max-width: 500px) {
+  .chat-container {
+    height: 95vh;
+  }
+  .chat-header {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .chat-input textarea {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .chat-input button {
+    flex: 0 0 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
